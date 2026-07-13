@@ -1,10 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 
-import heroBuilding from "@/assets/hero-building.jpg";
+import heroBuildingAsset from "@/assets/fachada-noite.jpg.asset.json";
+import lifestyleAsset from "@/assets/praca.jpg.asset.json";
 import interiorDetail from "@/assets/interior-detail.jpg";
 import shadowDetail from "@/assets/shadow-detail.jpg";
 import textureBg from "@/assets/texture-bg.jpg";
+
+const heroBuilding = heroBuildingAsset.url;
+const lifestyleImage = lifestyleAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -138,7 +142,7 @@ function Index() {
       <section
         id="lifestyle"
         className="relative min-h-[80vh] w-full overflow-hidden bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBuilding})` }}
+        style={{ backgroundImage: `url(${lifestyleImage})` }}
       >
         <div className="absolute inset-0 bg-brand-earth/60" />
         <div className="relative z-10 flex min-h-[80vh] items-end px-6 py-24 md:px-16 md:py-32">
