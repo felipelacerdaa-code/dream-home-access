@@ -4,8 +4,8 @@ import { useState, type FormEvent } from "react";
 import heroBuildingAsset from "@/assets/fachada-noite.jpg.asset.json";
 import lifestyleAsset from "@/assets/praca.jpg.asset.json";
 import interiorDetail from "@/assets/interior-detail.jpg";
-import shadowDetail from "@/assets/shadow-detail.jpg";
 import textureBg from "@/assets/texture-bg.jpg";
+import logoMeta from "@/assets/logo-meta.png";
 
 const heroBuilding = heroBuildingAsset.url;
 const lifestyleImage = lifestyleAsset.url;
@@ -26,9 +26,13 @@ function Index() {
     <div className="min-h-screen bg-brand-sand font-sans text-brand-earth selection:bg-brand-gold/30">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 py-6 md:px-10">
-        <span className="font-display text-2xl font-semibold tracking-tighter">
-          Verdantis
-        </span>
+        <a href="#" aria-label="META Construtora — início">
+          <img
+            src={logoMeta}
+            alt="META Construtora"
+            className="h-8 w-auto md:h-9"
+          />
+        </a>
         <div className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] md:flex">
           <a href="#conceito" className="transition-colors hover:text-brand-gold">
             O Conceito
@@ -43,12 +47,6 @@ function Index() {
             Localização
           </a>
         </div>
-        <a
-          href="#register"
-          className="rounded-full border border-brand-earth/20 px-5 py-2 text-[10px] uppercase tracking-[0.2em] transition-all hover:bg-brand-earth hover:text-brand-sand"
-        >
-          Lista VIP
-        </a>
       </nav>
 
       {/* Hero */}
@@ -153,16 +151,6 @@ function Index() {
                   height={1000}
                   loading="lazy"
                   className="aspect-[4/5] w-full rounded-sm object-cover shadow-2xl"
-                />
-              </div>
-              <div className="floating-image absolute -bottom-16 -left-10 z-20 hidden aspect-[5/7] w-64 lg:block">
-                <img
-                  src={shadowDetail}
-                  alt="Sombra de folhagem sobre parede de pedra"
-                  width={512}
-                  height={720}
-                  loading="lazy"
-                  className="h-full w-full object-cover shadow-2xl"
                 />
               </div>
             </div>
@@ -463,9 +451,11 @@ function Index() {
       {/* Footer */}
       <footer className="border-t border-brand-earth/10 py-10">
         <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-6 md:flex-row md:px-10">
-          <div className="font-display text-xl font-semibold tracking-tighter text-brand-gold">
-            Verdantis
-          </div>
+          <img
+            src={logoMeta}
+            alt="META Construtora"
+            className="h-7 w-auto opacity-80"
+          />
           <div className="text-[10px] uppercase tracking-[0.25em] opacity-60">
             © 2026 Verdantis Incorporações · Imagens meramente ilustrativas · CRECI J-00000
           </div>
