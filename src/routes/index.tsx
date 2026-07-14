@@ -6,6 +6,7 @@ import lifestyleAsset from "@/assets/praca.jpg.asset.json";
 import fachadaAerea from "@/assets/fachada-aerea.jpg";
 import textureBg from "@/assets/texture-bg.jpg";
 import logoMeta from "@/assets/logo-meta.png";
+import logoMetaEarth from "@/assets/logo-meta-earth.png";
 
 const heroBuilding = heroBuildingAsset.url;
 const lifestyleImage = lifestyleAsset.url;
@@ -28,7 +29,7 @@ function Index() {
       <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 py-6 md:px-10">
         <a href="#" aria-label="META Construtora — início">
           <img
-            src={logoMeta}
+            src={logoMetaEarth}
             alt="META Construtora"
             className="h-11 w-auto md:h-12"
           />
