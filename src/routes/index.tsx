@@ -36,7 +36,10 @@ function Index() {
           <a href="#lifestyle" className="transition-colors hover:text-brand-gold">
             Lifestyle
           </a>
-          <a href="#register" className="transition-colors hover:text-brand-gold">
+          <a href="#plantas" className="transition-colors hover:text-brand-gold">
+            Plantas
+          </a>
+          <a href="#localizacao" className="transition-colors hover:text-brand-gold">
             Localização
           </a>
         </div>
@@ -84,7 +87,36 @@ function Index() {
             >
               Garantir acesso antecipado
             </a>
+
+            <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-brand-earth/15 pt-6 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-earth/60">
+              <span>2 e 3 quartos</span>
+              <span className="text-brand-gold">·</span>
+              <span>[58–82] m²</span>
+              <span className="text-brand-gold">·</span>
+              <span>[Bairro · Cidade]</span>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Numbers strip */}
+      <section className="border-y border-brand-earth/10 bg-brand-sand py-14">
+        <div className="container mx-auto grid grid-cols-2 gap-10 px-6 md:grid-cols-4 md:px-10">
+          {[
+            { value: "[2]", label: "Torres" },
+            { value: "[120]", label: "Unidades" },
+            { value: "[20+]", label: "Itens de lazer" },
+            { value: "[82] m²", label: "Maior planta" },
+          ].map((item) => (
+            <div key={item.label} className="border-l border-brand-gold/50 pl-5">
+              <div className="font-display text-4xl leading-none md:text-5xl">
+                {item.value}
+              </div>
+              <div className="mt-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-brand-earth/60">
+                {item.label}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -159,6 +191,149 @@ function Index() {
               parque. Cada ambiente foi pensado para transformar rotina em
               ritual.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Amenities grid */}
+      <section className="bg-brand-sand py-24 md:py-32">
+        <div className="container mx-auto px-6 md:px-10">
+          <div className="mb-14 max-w-2xl">
+            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
+              Lazer &amp; Conveniência
+            </span>
+            <h2 className="font-display text-4xl leading-tight md:text-5xl">
+              Tudo a um elevador de distância.
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-brand-earth/10 bg-brand-earth/10 md:grid-cols-4">
+            {[
+              "Piscina",
+              "Academia",
+              "Salão de festas",
+              "Espaço gourmet",
+              "Playground",
+              "Coworking",
+              "Pet place",
+              "Bicicletário",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex min-h-28 items-end bg-brand-sand p-6 transition-colors hover:bg-brand-gold/10"
+              >
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-earth/80">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-brand-earth/40">
+            [Ajustar itens conforme memorial do condomínio]
+          </p>
+        </div>
+      </section>
+
+      {/* Floor plans */}
+      <section id="plantas" className="bg-brand-earth py-24 text-brand-sand md:py-36">
+        <div className="container mx-auto px-6 md:px-10">
+          <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
+            <div className="max-w-2xl">
+              <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
+                03 — Plantas
+              </span>
+              <h2 className="font-display text-4xl leading-tight md:text-6xl">
+                Espaços que se adaptam à sua vida.
+              </h2>
+            </div>
+            <a
+              href="#register"
+              className="rounded-full border border-brand-sand/30 px-8 py-4 text-[10px] font-semibold uppercase tracking-[0.25em] transition-all hover:bg-brand-gold hover:border-brand-gold hover:text-brand-earth"
+            >
+              Receber plantas completas
+            </a>
+          </div>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+            {[
+              {
+                tipo: "Tipo 01",
+                area: "[58] m²",
+                titulo: "2 quartos com suíte",
+                detalhes: "[Varanda gourmet · living integrado · 1 vaga]",
+              },
+              {
+                tipo: "Tipo 02",
+                area: "[74] m²",
+                titulo: "3 quartos com suíte",
+                detalhes: "[Varanda gourmet · cozinha aberta · 2 vagas]",
+              },
+              {
+                tipo: "Tipo 03",
+                area: "[82] m²",
+                titulo: "[Garden / Cobertura]",
+                detalhes: "[Descrição da unidade especial]",
+              },
+            ].map((planta) => (
+              <div
+                key={planta.tipo}
+                className="border-t-2 border-brand-gold pt-8 transition-transform hover:-translate-y-1"
+              >
+                <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
+                  {planta.tipo}
+                </span>
+                <div className="mt-4 font-display text-5xl">{planta.area}</div>
+                <h3 className="mt-4 text-lg font-semibold">{planta.titulo}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-brand-sand/60">
+                  {planta.detalhes}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Location */}
+      <section id="localizacao" className="py-24 md:py-36">
+        <div className="container mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2">
+            <div>
+              <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
+                04 — Localização
+              </span>
+              <h2 className="mb-6 font-display text-4xl leading-tight md:text-6xl">
+                No centro da sua rotina.
+              </h2>
+              <p className="mb-10 max-w-md text-lg leading-relaxed text-brand-earth/70">
+                [Endereço ou região do empreendimento — frase curta sobre a
+                vizinhança.]
+              </p>
+              <ul className="divide-y divide-brand-earth/10 border-y border-brand-earth/10">
+                {[
+                  { local: "[Escola / Colégio]", distancia: "[000 m]" },
+                  { local: "[Supermercado]", distancia: "[000 m]" },
+                  { local: "[Parque / Praça]", distancia: "[000 m]" },
+                  { local: "[Shopping / Centro]", distancia: "[0 km]" },
+                  { local: "[Acesso principal]", distancia: "[0 km]" },
+                ].map((p) => (
+                  <li
+                    key={p.local}
+                    className="flex items-baseline justify-between gap-6 py-4"
+                  >
+                    <span className="text-sm font-semibold">{p.local}</span>
+                    <span className="font-display text-lg italic text-brand-gold">
+                      {p.distancia}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative flex aspect-[5/4] items-center justify-center overflow-hidden rounded-sm border border-brand-earth/15 bg-brand-earth/5">
+              <div className="text-center">
+                <div className="mx-auto mb-4 h-4 w-4 animate-pulse rounded-full bg-brand-gold ring-8 ring-brand-gold/20" />
+                <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-earth/50">
+                  [Mapa da região — Google Maps]
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -304,6 +479,19 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp button */}
+      <a
+        href="https://wa.me/[5500000000000]?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Verdantis."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110"
+      >
+        <svg viewBox="0 0 32 32" className="h-7 w-7 fill-white" aria-hidden>
+          <path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.5 2.5.7 3.8.7 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22.2c-1.2 0-2.4-.2-3.5-.7l-.5-.2-4.9.9 1-4.7-.3-.5c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.5 10.4-9.9 10.4zm5.4-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z" />
+        </svg>
+      </a>
     </div>
   );
 }
