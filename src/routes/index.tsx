@@ -17,8 +17,24 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const plantas = [
+  {
+    img: plantaTipo,
+    titulo: "Pavimento Tipo",
+    sub: "1º ao 7º andar · apartamentos de 2 quartos",
+  },
+  {
+    img: plantaOitavo,
+    titulo: "8º Pavimento",
+    sub: "unidades com terraço descoberto e churrasqueira",
+  },
+];
+
 function Index() {
   const [submitted, setSubmitted] = useState(false);
+  const [plantaAtiva, setPlantaAtiva] = useState(0);
+  const [lightboxAberto, setLightboxAberto] = useState(false);
+  const planta = plantas[plantaAtiva];
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -205,35 +221,69 @@ function Index() {
               Receber plantas completas
             </a>
           </div>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            {[
-              {
-                img: plantaTipo,
-                titulo: "Pavimento Tipo",
-                sub: "1º ao 7º andar · apartamentos de 2 quartos",
-              },
-              {
-                img: plantaOitavo,
-                titulo: "8º Pavimento",
-                sub: "unidades com terraço descoberto e churrasqueira",
-              },
-            ].map((planta) => (
-              <figure key={planta.titulo} className="group">
-                <div className="overflow-hidden rounded-sm bg-white shadow-2xl">
-                  <img
-                    src={planta.img}
-                    alt={`Planta baixa — ${planta.titulo}`}
-                    loading="lazy"
-                    className="w-full transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <figcaption className="mt-6 border-l-2 border-brand-gold pl-5">
-                  <h3 className="font-display text-2xl">{planta.titulo}</h3>
-                  <p className="mt-1 text-sm text-brand-sand/60">{planta.sub}</p>
-                </figcaption>
-              </figure>
+          <div className="mb-10 flex flex-wrap gap-3">
+            {plantas.map((p, i) => (
+              <button
+                key={p.titulo}
+                type="button"
+                onClick={() => setPlantaAtiva(i)}
+                className={`rounded-full px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] transition-all ${
+                  i === plantaAtiva
+                    ? "bg-brand-gold text-brand-earth"
+                    : "border border-brand-sand/30 text-brand-sand/70 hover:border-brand-gold hover:text-brand-gold"
+                }`}
+              >
+                {p.titulo}
+              </button>
             ))}
           </div>
+
+          <figure>
+            <button
+              type="button"
+              onClick={() => setLightboxAberto(true)}
+              className="group block w-full cursor-zoom-in overflow-hidden rounded-sm bg-white shadow-2xl"
+              aria-label={`Ampliar planta — ${planta.titulo}`}
+            >
+              <img
+                src={planta.img}
+                alt={`Planta baixa — ${planta.titulo}`}
+                className="w-full transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+            </button>
+            <figcaption className="mt-6 flex flex-wrap items-end justify-between gap-4 border-l-2 border-brand-gold pl-5">
+              <div>
+                <h3 className="font-display text-2xl">{planta.titulo}</h3>
+                <p className="mt-1 text-sm text-brand-sand/60">{planta.sub}</p>
+              </div>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-brand-gold">
+                Clique na planta para ampliar
+              </span>
+            </figcaption>
+          </figure>
+
+          {lightboxAberto && (
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label={`Planta ampliada — ${planta.titulo}`}
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-earth/95 p-4 backdrop-blur-sm md:p-10"
+              onClick={() => setLightboxAberto(false)}
+            >
+              <img
+                src={planta.img}
+                alt={`Planta baixa ampliada — ${planta.titulo}`}
+                className="max-h-full w-auto max-w-full rounded-sm shadow-2xl"
+              />
+              <button
+                type="button"
+                aria-label="Fechar"
+                className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full border border-brand-sand/40 text-2xl text-brand-sand transition-colors hover:bg-brand-sand hover:text-brand-earth"
+              >
+                ×
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
