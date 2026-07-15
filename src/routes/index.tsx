@@ -38,6 +38,11 @@ function Index() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const dados = new FormData(event.currentTarget);
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyUzOyeaORVVNS60FvNqVzYBqm0zgJkWDOhqWV69WSutM2AM8ME7AK1DJg7hsJ5vWuv/exec",
+      { method: "POST", mode: "no-cors", body: dados },
+    );
     setSubmitted(true);
   };
 
@@ -303,11 +308,17 @@ function Index() {
               </p>
               <ul className="divide-y divide-brand-earth/10 border-y border-brand-earth/10">
                 {[
-                  { local: "[Escola / Colégio]", distancia: "[000 m]" },
-                  { local: "[Supermercado]", distancia: "[000 m]" },
-                  { local: "[Parque / Praça]", distancia: "[000 m]" },
-                  { local: "[Shopping / Centro]", distancia: "[0 km]" },
-                  { local: "[Acesso principal]", distancia: "[0 km]" },
+                  {
+                    local: "Estação de metrô Terminal Samambaia",
+                    distancia: "5,1 km",
+                  },
+                  {
+                    local: "Top Atacarejo — maior mercado da região",
+                    distancia: "2,8 km",
+                  },
+                  { local: "Centro de Brasília", distancia: "28 km" },
+                  { local: "Escolas num raio de 5 km", distancia: "50" },
+                  { local: "Hospitais num raio de 10 km", distancia: "15" },
                 ].map((p) => (
                   <li
                     key={p.local}
