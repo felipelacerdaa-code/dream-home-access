@@ -335,14 +335,14 @@ function Index() {
                     htmlFor="name"
                     className="block text-[10px] uppercase tracking-[0.3em] text-brand-sand/50"
                   >
-                    Nome Completo
+                    Nome e sobrenome
                   </label>
                   <input
                     id="name"
                     name="name"
                     type="text"
                     required
-                    placeholder="Como podemos te chamar?"
+                    placeholder="Seu nome e sobrenome"
                     className="w-full border-b border-brand-sand/20 bg-transparent py-3 text-brand-sand placeholder:text-brand-sand/25 focus:border-brand-gold focus:outline-none"
                   />
                 </div>
@@ -378,22 +378,6 @@ function Index() {
                     className="w-full border-b border-brand-sand/20 bg-transparent py-3 text-brand-sand placeholder:text-brand-sand/25 focus:border-brand-gold focus:outline-none"
                   />
                 </div>
-                <div className="space-y-3">
-                  <label
-                    htmlFor="message"
-                    className="block text-[10px] uppercase tracking-[0.3em] text-brand-sand/50"
-                  >
-                    Mensagem (opcional)
-                  </label>
-                  <input
-                    id="message"
-                    name="message"
-                    type="text"
-                    placeholder="Conte o que você procura"
-                    className="w-full border-b border-brand-sand/20 bg-transparent py-3 text-brand-sand placeholder:text-brand-sand/25 focus:border-brand-gold focus:outline-none"
-                  />
-                </div>
-
                 <div className="md:col-span-2 md:pt-6">
                   <button
                     type="submit"
