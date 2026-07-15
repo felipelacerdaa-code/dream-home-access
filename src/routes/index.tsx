@@ -92,7 +92,7 @@ function Index() {
               <span className="text-brand-gold">·</span>
               <span>[58–82] m²</span>
               <span className="text-brand-gold">·</span>
-              <span>[Bairro · Cidade]</span>
+              <span>Samambaia · DF</span>
             </div>
           </div>
         </div>
@@ -184,44 +184,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Amenities grid */}
-      <section className="bg-brand-sand py-24 md:py-32">
-        <div className="container mx-auto px-6 md:px-10">
-          <div className="mb-14 max-w-2xl">
-            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
-              Lazer &amp; Conveniência
-            </span>
-            <h2 className="font-display text-4xl leading-tight md:text-5xl">
-              Tudo a um elevador de distância.
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-brand-earth/10 bg-brand-earth/10 md:grid-cols-4">
-            {[
-              "Piscina",
-              "Academia",
-              "Salão de festas",
-              "Espaço gourmet",
-              "Playground",
-              "Coworking",
-              "Pet place",
-              "Bicicletário",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex min-h-28 items-end bg-brand-sand p-6 transition-colors hover:bg-brand-gold/10"
-              >
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-earth/80">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-brand-earth/40">
-            [Ajustar itens conforme memorial do condomínio]
-          </p>
-        </div>
-      </section>
-
       {/* Floor plans */}
       <section id="plantas" className="bg-brand-earth py-24 text-brand-sand md:py-36">
         <div className="container mx-auto px-6 md:px-10">
@@ -292,8 +254,7 @@ function Index() {
                 No centro da sua rotina.
               </h2>
               <p className="mb-10 max-w-md text-lg leading-relaxed text-brand-earth/70">
-                [Endereço ou região do empreendimento — frase curta sobre a
-                vizinhança.]
+                QN 327, Conjunto A, nº 02 — Samambaia/DF
               </p>
               <ul className="divide-y divide-brand-earth/10 border-y border-brand-earth/10">
                 {[
@@ -315,13 +276,15 @@ function Index() {
                 ))}
               </ul>
             </div>
-            <div className="relative flex aspect-[5/4] items-center justify-center overflow-hidden rounded-sm border border-brand-earth/15 bg-brand-earth/5">
-              <div className="text-center">
-                <div className="mx-auto mb-4 h-4 w-4 animate-pulse rounded-full bg-brand-gold ring-8 ring-brand-gold/20" />
-                <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-earth/50">
-                  [Mapa da região — Google Maps]
-                </span>
-              </div>
+            <div className="relative aspect-[5/4] overflow-hidden rounded-sm border border-brand-earth/15 shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps?q=QN+327+Conjunto+A+2+Samambaia+DF&z=16&output=embed"
+                title="Mapa — QN 327, Conjunto A, nº 02, Samambaia/DF"
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
