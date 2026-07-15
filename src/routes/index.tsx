@@ -7,6 +7,8 @@ import fachadaAerea from "@/assets/fachada-aerea.jpg";
 import textureBg from "@/assets/texture-bg.jpg";
 import logoMeta from "@/assets/logo-meta.png";
 import logoMetaEarth from "@/assets/logo-meta-earth.png";
+import plantaTipo from "@/assets/planta-tipo.png";
+import plantaOitavo from "@/assets/planta-oitavo.png";
 
 const heroBuilding = heroBuildingAsset.url;
 const lifestyleImage = lifestyleAsset.url;
@@ -203,40 +205,33 @@ function Index() {
               Receber plantas completas
             </a>
           </div>
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             {[
               {
-                tipo: "Tipo 01",
-                area: "[58] m²",
-                titulo: "2 quartos com suíte",
-                detalhes: "[Varanda gourmet · living integrado · 1 vaga]",
+                img: plantaTipo,
+                titulo: "Pavimento Tipo",
+                sub: "1º ao 7º andar · apartamentos de 2 quartos",
               },
               {
-                tipo: "Tipo 02",
-                area: "[74] m²",
-                titulo: "3 quartos com suíte",
-                detalhes: "[Varanda gourmet · cozinha aberta · 2 vagas]",
-              },
-              {
-                tipo: "Tipo 03",
-                area: "[82] m²",
-                titulo: "[Garden / Cobertura]",
-                detalhes: "[Descrição da unidade especial]",
+                img: plantaOitavo,
+                titulo: "8º Pavimento",
+                sub: "unidades com terraço descoberto e churrasqueira",
               },
             ].map((planta) => (
-              <div
-                key={planta.tipo}
-                className="border-t-2 border-brand-gold pt-8 transition-transform hover:-translate-y-1"
-              >
-                <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
-                  {planta.tipo}
-                </span>
-                <div className="mt-4 font-display text-5xl">{planta.area}</div>
-                <h3 className="mt-4 text-lg font-semibold">{planta.titulo}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-sand/60">
-                  {planta.detalhes}
-                </p>
-              </div>
+              <figure key={planta.titulo} className="group">
+                <div className="overflow-hidden rounded-sm bg-white shadow-2xl">
+                  <img
+                    src={planta.img}
+                    alt={`Planta baixa — ${planta.titulo}`}
+                    loading="lazy"
+                    className="w-full transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <figcaption className="mt-6 border-l-2 border-brand-gold pl-5">
+                  <h3 className="font-display text-2xl">{planta.titulo}</h3>
+                  <p className="mt-1 text-sm text-brand-sand/60">{planta.sub}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
