@@ -52,7 +52,7 @@ function Index() {
 
       {/* Hero */}
       <section className="relative flex min-h-screen items-center overflow-hidden pt-24">
-        <div className="absolute right-0 top-0 z-0 h-full w-full md:w-2/3">
+        <div className="absolute right-0 top-0 z-0 h-full w-full [mask-image:linear-gradient(to_right,transparent_0%,black_55%)] md:w-2/3 md:[mask-image:linear-gradient(to_right,transparent_0%,black_45%)]">
           <img
             src={heroBuilding}
             alt="Fachada do empreendimento Verdantis ao entardecer, com jardins verticais integrados à arquitetura"
@@ -60,7 +60,7 @@ function Index() {
             height={1600}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-sand via-brand-sand/60 to-transparent md:from-brand-sand/95 md:via-brand-sand/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-sand/50 via-transparent to-transparent" />
         </div>
 
         <div className="container relative z-10 mx-auto px-6 md:px-10">
