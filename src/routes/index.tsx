@@ -400,7 +400,7 @@ function Index() {
             className="h-10 w-auto opacity-80"
           />
           <div className="text-[10px] uppercase tracking-[0.25em] opacity-60">
-            © 2026 Verdantis Incorporações · Imagens meramente ilustrativas · CRECI J-00000
+            © 2026 META Incorporadora · Imagens meramente ilustrativas
           </div>
           <div className="flex gap-3">
             <span className="flex h-8 w-8 items-center justify-center rounded-full border border-brand-earth/10 text-[8px] font-bold">
