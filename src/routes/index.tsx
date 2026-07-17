@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 
 import heroBuildingAsset from "@/assets/fachada-noite.jpg.asset.json";
-import lifestyleAsset from "@/assets/praca.jpg.asset.json";
 import fachadaAerea from "@/assets/fachada-aerea.jpg";
 import textureBg from "@/assets/texture-bg.jpg";
 import logoMeta from "@/assets/logo-meta.png";
@@ -11,7 +10,6 @@ import plantaTipo from "@/assets/planta-tipo.png";
 import plantaOitavo from "@/assets/planta-oitavo.png";
 
 const heroBuilding = heroBuildingAsset.url;
-const lifestyleImage = lifestyleAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -60,9 +58,6 @@ function Index() {
         <div className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] md:flex">
           <a href="#conceito" className="transition-colors hover:text-brand-gold">
             O Conceito
-          </a>
-          <a href="#lifestyle" className="transition-colors hover:text-brand-gold">
-            Lifestyle
           </a>
           <a href="#plantas" className="transition-colors hover:text-brand-gold">
             Plantas
@@ -116,12 +111,11 @@ function Index() {
 
       {/* Numbers strip */}
       <section className="border-y border-brand-earth/10 bg-brand-sand py-14">
-        <div className="container mx-auto grid grid-cols-2 gap-10 px-6 md:grid-cols-4 md:px-10">
+        <div className="container mx-auto grid grid-cols-1 gap-10 px-6 sm:grid-cols-3 md:px-10">
           {[
-            { value: "[2]", label: "Torres" },
-            { value: "[120]", label: "Unidades" },
-            { value: "[20+]", label: "Itens de lazer" },
-            { value: "[82] m²", label: "Maior planta" },
+            { value: "Apenas 49", label: "Unidades" },
+            { value: "2", label: "Quartos" },
+            { value: "46–62 m²", label: "Área das unidades" },
           ].map((item) => (
             <div key={item.label} className="border-l border-brand-gold/50 pl-5">
               <div className="font-display text-4xl leading-none md:text-5xl">
@@ -175,38 +169,13 @@ function Index() {
         </div>
       </section>
 
-      {/* Lifestyle — full-bleed image */}
-      <section
-        id="lifestyle"
-        className="relative min-h-[80vh] w-full overflow-hidden bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: `url(${lifestyleImage})` }}
-      >
-        <div className="absolute inset-0 bg-brand-earth/60" />
-        <div className="relative z-10 flex min-h-[80vh] items-end px-6 py-24 md:px-16 md:py-32">
-          <div className="max-w-3xl text-brand-sand">
-            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
-              02 — Lifestyle
-            </span>
-            <h2 className="mb-8 font-display text-4xl leading-tight md:text-7xl">
-              Uma <span className="italic font-light">curadoria</span> do que
-              importa.
-            </h2>
-            <p className="max-w-xl text-lg leading-relaxed text-brand-sand/80">
-              Wellness privativo, cozinha assinada, rooftop com vista para o
-              parque. Cada ambiente foi pensado para transformar rotina em
-              ritual.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Floor plans */}
       <section id="plantas" className="bg-brand-earth py-24 text-brand-sand md:py-36">
         <div className="container mx-auto px-6 md:px-10">
           <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
             <div className="max-w-2xl">
               <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
-                03 — Plantas
+                02 — Plantas
               </span>
               <h2 className="font-display text-4xl leading-tight md:text-6xl">
                 Espaços que se adaptam à sua vida.
@@ -291,7 +260,7 @@ function Index() {
           <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2">
             <div>
               <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
-                04 — Localização
+                03 — Localização
               </span>
               <h2 className="mb-6 font-display text-4xl leading-tight md:text-6xl">
                 No centro da sua rotina.
