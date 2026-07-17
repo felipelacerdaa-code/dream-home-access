@@ -110,13 +110,6 @@ function Index() {
               Garantir acesso antecipado
             </a>
 
-            <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-brand-earth/15 pt-6 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-earth/60">
-              <span>2 e 3 quartos</span>
-              <span className="text-brand-gold">·</span>
-              <span>[58–82] m²</span>
-              <span className="text-brand-gold">·</span>
-              <span>Samambaia · DF</span>
-            </div>
           </div>
         </div>
       </section>
