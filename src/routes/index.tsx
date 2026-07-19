@@ -11,6 +11,11 @@ import plantaOitavo from "@/assets/planta-oitavo.png";
 
 const heroBuilding = heroBuildingAsset.url;
 
+const WHATSAPP_COMERCIAL = "5500000000000"; // [substituir pelo número comercial com DDI+DDD]
+const MENSAGEM_WHATSAPP = encodeURIComponent(
+  "Olá! Acabei de me cadastrar na lista de espera do empreendimento da META em Samambaia e gostaria de saber mais.",
+);
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -42,6 +47,10 @@ function Index() {
       { method: "POST", mode: "no-cors", body: dados },
     );
     setSubmitted(true);
+    window.open(
+      `https://wa.me/${WHATSAPP_COMERCIAL}?text=${MENSAGEM_WHATSAPP}`,
+      "_blank",
+    );
   };
 
   return (
@@ -90,13 +99,13 @@ function Index() {
               </span>
             </div>
             <h1 className="mb-8 font-display text-6xl leading-[0.9] tracking-tight md:text-8xl lg:text-[9rem]">
-              Onde a <br />
-              <span className="font-light italic">natureza</span>
+              Aonde o <br />
+              <span className="font-light italic">futuro</span>
               <br /> reside.
             </h1>
             <p className="mb-10 max-w-md text-base font-light leading-relaxed md:text-xl">
-              Um refúgio urbano desenhado para quem busca o equilíbrio entre a
-              sofisticação moderna e a serenidade orgânica.
+              O condomínio residencial projetado para quem deseja acessar o
+              futuro.
             </p>
             <a
               href="#register"
@@ -141,16 +150,10 @@ function Index() {
                 Espaços que respiram.
               </h2>
               <p className="text-lg leading-relaxed text-brand-earth/70">
-                O Verdantis não é apenas um endereço. É um manifesto sobre como
-                viver bem — com varandas que se fundem ao horizonte e interiores
-                que abraçam a luz natural em cada hora do dia.
+                O [nome do condomínio] foi projetado para quem pensa adiante.
+                Quem está construindo uma jornada com maturidade e planejamento
+                para as próximas gerações.
               </p>
-              <div className="mt-10 flex items-center gap-4">
-                <div className="h-px w-20 bg-brand-gold" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.25em]">
-                  Lançamento Outono · 2026
-                </span>
-              </div>
             </div>
 
             <div className="relative md:col-span-7">
@@ -321,11 +324,9 @@ function Index() {
 
         <div className="container relative z-10 mx-auto px-6 md:px-10">
           <div className="mx-auto max-w-4xl text-center">
-            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
-              Lista VIP
-            </span>
             <h3 className="mb-8 font-display text-4xl leading-tight md:text-7xl">
-              Seja o primeiro a habitar o amanhã.
+              Seja o primeiro a habitar{" "}
+              <span className="whitespace-nowrap">o amanhã.</span>
             </h3>
             <p className="mx-auto mb-16 max-w-xl text-sm uppercase tracking-[0.25em] text-brand-sand/60">
               Cadastre-se para ser avisado assim que as vendas forem liberadas
@@ -336,12 +337,21 @@ function Index() {
               <div className="mx-auto max-w-lg border border-brand-gold/40 bg-brand-earth/40 p-12 backdrop-blur-sm">
                 <div className="mx-auto mb-6 h-px w-16 bg-brand-gold" />
                 <h4 className="mb-4 font-display text-3xl italic">
-                  Cadastro recebido.
+                  Cadastro confirmado.
                 </h4>
                 <p className="text-sm leading-relaxed text-brand-sand/70">
-                  Você está na lista VIP do Verdantis. Em breve, entraremos em
-                  contato com o convite exclusivo para o preview.
+                  Seus dados foram registrados. Abrimos uma conversa no
+                  WhatsApp com a nossa equipe comercial — se ela não abriu
+                  automaticamente, toque no botão abaixo.
                 </p>
+                <a
+                  href={`https://wa.me/${WHATSAPP_COMERCIAL}?text=${MENSAGEM_WHATSAPP}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-block bg-brand-gold px-10 py-4 text-xs font-bold uppercase tracking-[0.3em] text-brand-earth transition-colors hover:bg-brand-sand"
+                >
+                  Falar no WhatsApp
+                </a>
               </div>
             ) : (
               <form
@@ -438,7 +448,7 @@ function Index() {
 
       {/* Floating WhatsApp button */}
       <a
-        href="https://wa.me/[5500000000000]?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Verdantis."
+        href={`https://wa.me/${WHATSAPP_COMERCIAL}?text=${MENSAGEM_WHATSAPP}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar no WhatsApp"
