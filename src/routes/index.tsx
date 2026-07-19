@@ -435,14 +435,6 @@ function Index() {
           <div className="text-[10px] uppercase tracking-[0.25em] opacity-60">
             © 2026 META Incorporadora · Imagens meramente ilustrativas
           </div>
-          <div className="flex gap-3">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-brand-earth/10 text-[8px] font-bold">
-              IG
-            </span>
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-brand-earth/10 text-[8px] font-bold">
-              LI
-            </span>
-          </div>
         </div>
       </footer>
 
