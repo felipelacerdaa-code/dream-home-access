@@ -118,25 +118,38 @@ function Index() {
         </div>
       </section>
 
-      {/* Numbers strip */}
-      <section className="border-y border-brand-earth/10 bg-brand-sand py-14">
-        <div className="container mx-auto grid grid-cols-1 gap-10 px-6 sm:grid-cols-3 md:px-10">
-          {[
-            { value: "Apenas 49", label: "Unidades" },
-            { value: "2", label: "Quartos" },
-            { value: "46–62 m²", label: "Área das unidades" },
-          ].map((item) => (
-            <div key={item.label} className="border-l border-brand-gold/50 pl-5">
-              <div className="font-display text-4xl leading-none md:text-5xl">
-                {item.value}
-              </div>
-              <div className="mt-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-brand-earth/60">
-                {item.label}
-              </div>
-            </div>
-          ))}
+{/* Numbers strip */}
+<section className="border-y border-brand-earth/10 bg-brand-sand py-16 md:py-20">
+  <div className="container mx-auto px-6 md:px-10">
+    <div className="mx-auto grid max-w-4xl grid-cols-1 divide-y divide-brand-earth/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:divide-brand-earth/15">
+      {[
+        { eyebrow: "Apenas", value: "49", label: "Unidades" },
+        { eyebrow: " ", value: "2", label: "Quartos" },
+        { eyebrow: " ", value: "46–62", suffix: "m²", label: "Área das unidades" },
+      ].map((item) => (
+        <div
+          key={item.label}
+          className="flex flex-col items-center px-6 py-8 text-center sm:py-4"
+        >
+          <span className="mb-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-earth/50">
+            {item.eyebrow}
+          </span>
+          <div className="font-display text-5xl leading-none md:text-6xl">
+            {item.value}
+            {item.suffix && (
+              <span className="ml-1.5 align-baseline text-2xl text-brand-earth/70 md:text-3xl">
+                {item.suffix}
+              </span>
+            )}
+          </div>
+          <div className="mt-4 text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-gold">
+            {item.label}
+          </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Concept */}
       <section id="conceito" className="relative overflow-hidden py-24 md:py-40">
