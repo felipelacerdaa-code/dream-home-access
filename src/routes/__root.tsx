@@ -77,9 +77,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Verdantis — Pré-lançamento residencial de alto padrão" },
-      { name: "description", content: "Cadastre-se para receber acesso antecipado ao Verdantis, um lançamento residencial onde a arquitetura encontra a natureza." },
-      { property: "og:title", content: "Verdantis — Pré-lançamento residencial" },
+      { title: "Meta Incorporadora — Pré-lançamento residencial de alto padrão" },
+      { name: "description", content: "Cadastre-se para receber acesso antecipado ao Meta Incorporadora, um lançamento residencial onde a arquitetura encontra a natureza." },
+      { property: "og:title", content: "Meta Incorporadora — Pré-lançamento residencial" },
       { property: "og:description", content: "Um refúgio urbano em pré-lançamento. Entre na lista VIP e seja o primeiro a saber quando as vendas abrirem." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
