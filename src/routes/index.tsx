@@ -82,7 +82,7 @@ function Index() {
         <div className="absolute right-0 top-0 z-0 h-full w-full [mask-image:linear-gradient(to_right,transparent_0%,black_55%)] md:w-2/3 md:[mask-image:linear-gradient(to_right,transparent_0%,black_45%)]">
           <img
             src={heroBuilding}
-            alt="Fachada do empreendimento Verdantis ao entardecer, com jardins verticais integrados à arquitetura"
+            alt="Fachada do empreendimento Meta Incorporadora ao entardecer, com jardins verticais integrados à arquitetura"
             width={1200}
             height={1600}
             className="h-full w-full object-cover"
