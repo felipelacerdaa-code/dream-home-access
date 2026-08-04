@@ -57,10 +57,10 @@ function Index() {
     <div className="min-h-screen bg-brand-sand font-sans text-brand-earth selection:bg-brand-gold/30">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 py-6 md:px-10">
-        <a href="#" aria-label="META Construtora — início">
+        <a href="#" aria-label="META Incorporadora — início">
           <img
             src={logoMetaEarth}
-            alt="META Construtora"
+            alt="META Incorporadora"
             className="h-11 w-auto md:h-12"
           />
         </a>
@@ -82,7 +82,7 @@ function Index() {
         <div className="absolute right-0 top-0 z-0 h-full w-full [mask-image:linear-gradient(to_right,transparent_0%,black_55%)] md:w-2/3 md:[mask-image:linear-gradient(to_right,transparent_0%,black_45%)]">
           <img
             src={heroBuilding}
-            alt="Fachada do empreendimento Meta Incorporadora ao entardecer, com jardins verticais integrados à arquitetura"
+            alt="Fachada do empreendimento Samambaia2026 ao entardecer."
             width={1200}
             height={1600}
             className="h-full w-full object-cover"
@@ -163,7 +163,7 @@ function Index() {
                 Espaços que respiram.
               </h2>
               <p className="text-lg leading-relaxed text-brand-earth/70">
-                O [nome do condomínio] foi projetado para quem pensa adiante.
+                O Samambaia2026 foi projetado para quem pensa adiante.
                 Quem está construindo uma jornada com maturidade e planejamento
                 para as próximas gerações.
               </p>
@@ -442,7 +442,7 @@ function Index() {
         <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-6 md:flex-row md:px-10">
           <img
             src={logoMeta}
-            alt="META Construtora"
+            alt="META Incorporadora"
             className="h-10 w-auto opacity-80"
           />
           <div className="text-[10px] uppercase tracking-[0.25em] opacity-60">
